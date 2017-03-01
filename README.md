@@ -48,34 +48,34 @@ start listening for incomming connection ------
 mobile.bluetoothServer.init(function(data){
 			},function(error){
 			});
-<br/>
+<br></br>
 mobile.bluetoothServer.startService(function(data){
 },function(error){
 });
-<br/>
+<br></br>
 monitor the connection state ------ 
 mobile.bluetoothServer.startGetServerState(function(data){
     console.log(data);
 },function(error){
 },1000);
-<br/>
+<br></br>
 stop monitor ------ 
 mobile.bluetoothServer.stopGetServerState();
-<br/>
+<br></br>
 get remote message ------ 
 mobile.bluetoothServer.startGetInputStream(function(data){
     console.log(data);
 },function(error){
 },delay);
-<br/>
+<br></br>
 stop getting remote message ------ 
 mobile.bluetoothServer.stopGetInputStream();
-<br/>
+<br></br>
 send message ------ 
 mobile.bluetoothServer.sendMessage(function(data){
 },function(error){
 },"hello there");
-<br/>
+<br></br>
 stop connection ------ 
 mobile.bluetoothServer.stopService(function(data){
 },function(error){
