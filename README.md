@@ -1,6 +1,6 @@
 # bluetooth_server
 bluetooth plugin of cordova
-# this plugin works together with it's customer side plugin. two mobile device can be connected with eachother and transfer data. before using the plugin. device must be paired with eachother and bluetooth must be set open. 
+# this plugin works together with it's customer side plugin https://github.com/lgdlazyhammer/bluetooth_client. two mobile device can be connected with eachother and transfer data. before using the plugin. device must be paired with eachother and bluetooth must be set open. 
 
 # methods
 <b>initialize service, which is necessary before using plugin</b><br></br>
