@@ -54,30 +54,30 @@ mobile.bluetoothServer.startService(function(data){
 },function(error){
 });
 <br></br>
-<b>monitor the connection state</b> 
+<b>monitor the connection state</b><br></br> 
 mobile.bluetoothServer.startGetServerState(function(data){
     console.log(data);
 },function(error){
 },1000);
 <br></br>
-<b>stop monitor</b> 
+<b>stop monitor</b><br></br> 
 mobile.bluetoothServer.stopGetServerState();
 <br></br>
-<b>get remote message</b> 
+<b>get remote message</b> <br></br>
 mobile.bluetoothServer.startGetInputStream(function(data){
     console.log(data);
 },function(error){
 },delay);
 <br></br>
-<b>stop getting remote message</b>  
+<b>stop getting remote message</b><br></br>  
 mobile.bluetoothServer.stopGetInputStream();
 <br></br>
-<b>send message</b>
+<b>send message</b><br></br>
 mobile.bluetoothServer.sendMessage(function(data){
 },function(error){
 },"hello there");
 <br></br>
-<b>stop connection</b> 
+<b>stop connection</b> <br></br>
 mobile.bluetoothServer.stopService(function(data){
 },function(error){
 });
