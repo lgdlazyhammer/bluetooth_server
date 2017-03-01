@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="my-bluetooth-server" version="1.0.1">
+    <name>BluetoothServer</name>
+    <description>Cordova BluetoothServer Plugin</description>
+    <license>Apache 2.0 License</license>
+    <keywords>bluetooth,server</keywords>
+	<!--<engines>
+		<engine name="cordova" version=">=1.7.0" />
+		<engine name="cordova-android" version=">=1.8.0" />
+	</engines>-->
+	<js-module src="www/bluetooth_server.js" name="BluetoothServer">
+	  <clobbers target="mobile.bluetoothServer" />
+	</js-module>
+	<platform name="android">
+		<config-file target="AndroidManifest.xml" parent="/*">
+			<uses-permission android:name="android.permission.BLUETOOTH"/>
+			<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+		</config-file>
+		<config-file target="config.xml" parent="/*">
+			<feature name="BluetoothServer">
+				<param name="android-package" value="org.apache.cordova.plugin.BluetoothServer"/>
+			</feature>
+		</config-file>
+
+		<source-file src="src/android/BluetoothServer.java" target-dir="src/org/apache/cordova/plugin" />
+	</platform>
+</plugin>
