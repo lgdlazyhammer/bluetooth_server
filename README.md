@@ -1,8 +1,6 @@
 # bluetooth_server
 bluetooth plugin of cordova
-# this plugin works together with it's customer side plugin
-# two mobile device can connected with eachother and transfer data
-# before use the plugin, device must be paired with eachother and bluetooth must be set open
+# this plugin works together with it's customer side plugin. two mobile device can be connected with eachother and transfer data. before using the plugin. device must be paired with eachother and bluetooth must be set open. 
 
 # initialize service, which is necessary before using plugin
 mobile.bluetoothServer.init(function(data){
@@ -26,7 +24,7 @@ mobile.bluetoothServer.sendMessage(function(data){
 },message);
 
 # get server state constantly after some millis second delay
-# 0-initialized, 1-listening, 2-connecting, 3-connected
+# return data: 0-initialized, 1-listening, 2-connecting, 3-connected
 mobile.bluetoothServer.startGetServerState(function(data){
 },function(error){
 },1000);
@@ -46,39 +44,39 @@ mobile.bluetoothServer.stopGetInputStream();
 
 # for example
 
-# start listening for incomming connection
+start listening for incomming connection ------ 
 mobile.bluetoothServer.init(function(data){
 			},function(error){
 			});
-      
+#     
 mobile.bluetoothServer.startService(function(data){
 },function(error){
 });
-
-# monitor the connection state
+#
+monitor the connection state ------ 
 mobile.bluetoothServer.startGetServerState(function(data){
     console.log(data);
 },function(error){
 },1000);
-
-# stop monitor
+#
+stop monitor ------ 
 mobile.bluetoothServer.stopGetServerState();
-
-# get remote message
+#
+get remote message ------ 
 mobile.bluetoothServer.startGetInputStream(function(data){
     console.log(data);
 },function(error){
 },delay);
-
-# stop getting remote message
+#
+stop getting remote message ------ 
 mobile.bluetoothServer.stopGetInputStream();
-
-# send message
+#
+send message ------ 
 mobile.bluetoothServer.sendMessage(function(data){
 },function(error){
 },"hello there");
-
-# stop connection
+#
+stop connection ------ 
 mobile.bluetoothServer.stopService(function(data){
 },function(error){
 });
