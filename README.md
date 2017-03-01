@@ -4,7 +4,7 @@ bluetooth plugin of cordova
 # two mobile device can connected with eachother and transfer data
 # before use the plugin, device must be paired with eachother and bluetooth must be set open
 
-# initialize service, which is necessary before useing plugin
+# initialize service, which is necessary before using plugin
 mobile.bluetoothServer.init(function(data){
 			},function(error){
 			});
@@ -41,3 +41,44 @@ mobile.bluetoothServer.stopGetServerState();
 
 # stop get remote device sended message loop
 mobile.bluetoothServer.stopGetInputStream();
+
+
+
+# for example
+
+# start listening for incomming connection
+mobile.bluetoothServer.init(function(data){
+			},function(error){
+			});
+      
+mobile.bluetoothServer.startService(function(data){
+},function(error){
+});
+
+# monitor the connection state
+mobile.bluetoothServer.startGetServerState(function(data){
+    console.log(data);
+},function(error){
+},1000);
+
+# stop monitor
+mobile.bluetoothServer.stopGetServerState();
+
+# get remote message
+mobile.bluetoothServer.startGetInputStream(function(data){
+    console.log(data);
+},function(error){
+},delay);
+
+# stop getting remote message
+mobile.bluetoothServer.stopGetInputStream();
+
+# send message
+mobile.bluetoothServer.sendMessage(function(data){
+},function(error){
+},"hello there");
+
+# stop connection
+mobile.bluetoothServer.stopService(function(data){
+},function(error){
+});
